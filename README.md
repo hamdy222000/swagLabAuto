@@ -37,7 +37,7 @@ The framework supports parallel execution with ThreadLocal, external test data i
 
 1. Clone the repository: 
 ```bash
-git clone https://github.com/hamdy222000/Swag_labs-Test-Automation-Project
+git clone https://github.com/hamdy222000/swagLabAuto
 ```
 
 2. Import the project into your IDE as a Maven project.
