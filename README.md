@@ -83,7 +83,7 @@ mvn clean test "-Dsurefire.suiteXmlFiles=regression.xml"
   - Logout process  
   - Validation of redirection  
 - End-to-End Flow:
-  - Full purchase journey validation (login → buy → confirmation)
+  - Full purchase journey validation (login → buy → confirmation → logout )
 
 
 ---
