@@ -174,6 +174,7 @@ public class ProductsPage {
     public ProductsPage resetApp(){
         redirectProductsPage()
                 .clickMenuBtn().selectOption(resetLocator , "Reset App State");
+        attachMessage("refresh products page."); 
         driver.navigate().refresh();
         expectedNoOfProductsAddedToCart = 0;
         return this;
