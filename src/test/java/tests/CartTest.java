@@ -24,7 +24,7 @@ public class CartTest extends BaseTest {
     private SoftAssert softAssert;
 
     @BeforeClass
-    public void BeforeProductsClass(){
+    public void BeforeCartClass(){
         loginPage = new LoginPage();
         productsPage = new ProductsPage();
         productsValidations = new ProductsValidations(productsPage);
@@ -38,7 +38,7 @@ public class CartTest extends BaseTest {
     }
 
     @BeforeMethod
-    public void BeforeProductsMethod(){
+    public void BeforeCartMethod(){
         softAssert = new SoftAssert();
         cartPage.redirectCartPage();
     }

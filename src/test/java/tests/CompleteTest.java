@@ -49,7 +49,7 @@ public class CompleteTest extends BaseTest {
     }
 
     @BeforeMethod
-    public void beforeOverviewMethod(){
+    public void beforeCompleteMethod(){
         softAssert = new SoftAssert();
 
     }
