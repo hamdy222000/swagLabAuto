@@ -17,7 +17,7 @@ public class Waits {
 
     // ===== Constructors =====
     public Waits() {
-        this.wait = new WebDriverWait(NewDriver.getDriver(), Duration.ofSeconds(1));
+        this.wait = new WebDriverWait(NewDriver.getDriver(), Duration.ofSeconds(5));
     }
 
     public Waits(int seconds) {
