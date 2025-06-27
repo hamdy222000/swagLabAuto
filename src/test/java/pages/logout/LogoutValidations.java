@@ -1,5 +1,6 @@
 package pages.logout;
 
+import org.testng.asserts.SoftAssert;
 import utils.driverManager.NewDriver;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.WebDriver;
@@ -33,13 +34,19 @@ public class LogoutValidations {
 
     //====Validations====//
     public LogoutValidations verifyLogoutDoneSuccessfully(){
+        return verifyLogoutDoneSuccessfully(null);
+    }
+
+    public LogoutValidations verifyLogoutDoneSuccessfully(SoftAssert softAssert){
         attachMessage("Verify redirected to login page.");
         verifyUrlChange(LoginData.LoginUrl , "Login");
         attachMessage("try navigate back after logout. ");
         driver.navigate().back();
         attachMessage("Verify that the user cannot back to his account before login again. ");
         if(wait.urlChangeFrom(LoginData.LoginUrl)){
-            Assert.fail("Expected user to be required to login again after logout, but found redirected to: " + driver.getCurrentUrl());
+            String message = "Expected user to be required to login again after logout, but found redirected to: " + driver.getCurrentUrl();
+            if (softAssert == null) Assert.fail(message);
+            else softAssert.fail(message);
         }
          return this;
     }

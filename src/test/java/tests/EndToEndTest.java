@@ -93,7 +93,7 @@ public class EndToEndTest extends BaseTest {
                 .clickContinueBtn();
         informationValidations.verifyContinueToOverView();
         overviewValidations.verifySelectedItems(cartPage.getSelectedItems(), softAssert)
-                        .verifyTotalPrice();
+                        .verifyTotalPrice(softAssert);
         overviewPage.clickFinishBtn();
         overviewValidations.verifyRedirectedToCompletePage();
         completeValidations.verifyCompleteSuccessfully(softAssert);
@@ -101,8 +101,7 @@ public class EndToEndTest extends BaseTest {
         completeValidations.verifyBackHome();
         productsValidations.verifyResetApp();
         productsPage.logout();
-        logoutValidations.verifyLogoutDoneSuccessfully();
-
+        logoutValidations.verifyLogoutDoneSuccessfully(softAssert);
 
         softAssert.assertAll();
 
