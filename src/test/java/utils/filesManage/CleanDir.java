@@ -18,13 +18,9 @@ public class CleanDir {
             if (files != null) {
                 Arrays.stream(files).forEach(FileUtils::deleteQuietly);
             }
-            ThreadContext.clearAll();
-            ThreadContext.put("MethodName", "onExecutionStart");
             Logs.info("dir <"+dirName+"> is clean");
         }
         else {
-            ThreadContext.clearAll();
-            ThreadContext.put("MethodName", "onExecutionStart");
             Logs.warn("cannot find dir <"+dirName+"> to clean.");
 
         }

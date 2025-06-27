@@ -11,6 +11,8 @@ public class TestngListeners implements ITestListener , IExecutionListener , IIn
 
     @Override
     public void onExecutionStart() {
+        ThreadContext.clearAll();
+        ThreadContext.put("MethodName", "onExecutionStart");
         CleanDir.clean("logs");
         CleanDir.clean("allure-results");
     }
