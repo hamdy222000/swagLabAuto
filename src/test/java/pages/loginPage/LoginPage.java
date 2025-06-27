@@ -45,29 +45,16 @@ public class LoginPage {
         Logs.info(message);
     }
 
-
-     LoginPage enterUsername(String username){
-        wait.elementToBeVisible(usernameField,true);
-        attachMessage("enter username : " + username);
-        WebElement element = find(usernameField);
+    LoginPage fillField(By locator ,  String fieldData , String fieldName){
+        wait.elementToBeVisible(locator,true);
+        attachMessage("enter " + fieldName +"  : " + fieldData);
+        WebElement element = find(locator);
         element.sendKeys(Keys.CONTROL + "a");
         element.sendKeys(Keys.DELETE);
-        element.sendKeys(username);
+        element.sendKeys(fieldData);
         return this;
     }
 
-
-
-
-     LoginPage enterPassword(String password){
-        wait.elementToBeVisible(passwordField,true);
-        attachMessage("enter password : " + password);
-        WebElement element = find(passwordField);
-        element.sendKeys(Keys.CONTROL + "a");
-        element.sendKeys(Keys.DELETE);
-        element.sendKeys(password);
-        return this;
-    }
 
 
      LoginPage clickLogiBtn(){
@@ -87,8 +74,8 @@ public class LoginPage {
     //===Test cases code===//
     public LoginPage login(String username , String password){
         return redirectLoginPage()
-                .enterUsername(username)
-                .enterPassword(password)
+                .fillField(usernameField , username , "username")
+                .fillField(passwordField , password , "password")
                 .clickLogiBtn();
     }
 
