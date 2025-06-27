@@ -29,7 +29,7 @@ public class ProductsPage {
      final By cartIconLocator = By.cssSelector(".shopping_cart_container a");
      final By noOfProductsAddedIconLocator = By.cssSelector(".shopping_cart_container a span");
      final By resetLocator = By.id("reset_sidebar_link");
-    final By logoutLocator = By.id("logout_sidebar_link");
+     final By logoutLocator = By.id("logout_sidebar_link");
      final By menuBtnLocator = By.id("react-burger-menu-btn");
 
 
@@ -151,7 +151,7 @@ public class ProductsPage {
         String lastTitle = getProductTitle( Product.Number_One.getIndex());
         clickDropDownFilterList()
                 .selectTypeOfFilter(index , filterMessage);
-        wait.elementTextChange(titleLocator , lastTitle);
+        wait.elementTextChange(titleLocator , Product.Number_One.getIndex() , lastTitle);
         return this;
     }
 

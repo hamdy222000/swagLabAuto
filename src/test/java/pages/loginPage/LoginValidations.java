@@ -45,7 +45,6 @@ public class LoginValidations {
         return this;
     }
 
-
     public LoginValidations verifyLoginUsingInvalidUsername(){
         return verifyErrorMessage(LoginData.InvalidUserErrorMessage , null);
     }
@@ -53,7 +52,6 @@ public class LoginValidations {
     public LoginValidations verifyLoginUsingInvalidUsername(SoftAssert softAssert){
         return verifyErrorMessage(LoginData.InvalidUserErrorMessage , softAssert);
     }
-
 
     public LoginValidations verifyLoginUsingInvalidPassword( ){
         return verifyErrorMessage(LoginData.InvalidUserErrorMessage , null);
@@ -70,7 +68,6 @@ public class LoginValidations {
     public LoginValidations verifyLoginUsingInvalidUser(SoftAssert softAssert){
         return verifyErrorMessage(LoginData.InvalidUserErrorMessage , softAssert);
     }
-
 
     public LoginValidations verifyBlankUsernameNotAllow(){
         return verifyErrorMessage(LoginData.BlankUsernameErrorMessage , null);
