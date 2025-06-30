@@ -31,7 +31,7 @@ public class TestngListeners implements ITestListener , IExecutionListener , IIn
     public void onFinish(ITestContext context) {
         ThreadContext.clearAll();
         ThreadContext.put("MethodName", "onFinish");
-        Logs.info("End of test " + context.getName());
+        Logs.info("End the test of " + context.getName());
 
     }
 
