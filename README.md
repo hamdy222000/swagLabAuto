@@ -95,7 +95,7 @@ mvn clean test "-Dsurefire.suiteXmlFiles=regression.xml"
 This project uses **GitHub Actions** to run REST API tests automatically on every `push` or `pull request` to the `main` branch.
 
 ###  Workflow Features:
-- Runs tests using `mvn clean test`
+- Runs tests using `mvn clean test -Dheadless=true`
 - Uses Java 23 on Ubuntu latest runner
 - Uploads **Allure Report results** as build artifacts
 - Validates build status before allowing merge (if branch protection is enabled)
