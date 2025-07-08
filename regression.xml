@@ -1,5 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="regression_testing" >
+
+    <listeners>
+        <listener class-name="utils.Listeners.TestngListeners"/>
+        <listener class-name="utils.Listeners.RetryTransformer"/>
+    </listeners>
+
     <test name="all_pages">
         <classes>
             <class name="tests.loginTest"></class>

@@ -1,4 +1,4 @@
-name: Run API Tests with Allure Report
+name: Run Swag_Labs Tests with Allure Report
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   api-tests:
-    name: Run REST API Tests
+    name: Run Swag_Labs Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +21,7 @@ jobs:
           distribution: 'temurin'
           java-version: '23'
 
-      - name: Run API Tests
+      - name: Run Swag_Labs Tests
         run: mvn clean test
 
       - name: Archive Allure Results

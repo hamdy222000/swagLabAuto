@@ -15,6 +15,7 @@ The framework supports parallel execution with ThreadLocal, external test data i
 - Custom wait utility for element visibility, text, alerts, and URL
 - Allure report integration
 - Modular and scalable base class
+- RetryAnalyzer for retrying flaky tests automatically
 - Automatic attachment of logs and screenshots to Allure reports on test failure
 - GitHub Actions integration for automated CI/CD on every push and pull request
 
@@ -101,26 +102,39 @@ This project uses **GitHub Actions** to run REST API tests automatically on ever
 
 ###  Workflow Summary:
 ```yaml
-name: Run API Tests with Allure Report
+name: Run Swag_Labs Tests with Allure Report
+
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
 jobs:
   api-tests:
+    name: Run Swag_Labs Tests
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Set up Java 23
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '23'
-      - run: mvn clean test
-      - uses: actions/upload-artifact@v4
+
+      - name: Run Swag_Labs Tests
+        run: mvn clean test
+
+      - name: Archive Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: allure-results
           path: testOut/allure-results
+
 ```
 
 ## Author
