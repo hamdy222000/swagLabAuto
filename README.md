@@ -136,6 +136,8 @@ jobs:
           path: testOut/allure-results
 ```
 
+---
+
 ## Author
 Mahmoud Hamdy
 ISTQB Certified Tester Engineer – CTFL
