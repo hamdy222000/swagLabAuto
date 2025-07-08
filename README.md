@@ -16,6 +16,7 @@ The framework supports parallel execution with ThreadLocal, external test data i
 - Allure report integration
 - Modular and scalable base class
 - Automatic attachment of logs and screenshots to Allure reports on test failure
+- GitHub Actions integration for automated CI/CD on every push and pull request
 
 
 ---
@@ -88,9 +89,41 @@ mvn clean test "-Dsurefire.suiteXmlFiles=regression.xml"
 
 ---
 
-## Author
+##  Continuous Integration (CI/CD)
 
-Mahmoud Hamdy ,
-ISTQB Certified Tester – CTFL  
-Automation Engineer – Java, Selenium, TestNG
+This project uses **GitHub Actions** to run REST API tests automatically on every `push` or `pull request` to the `main` branch.
+
+###  Workflow Features:
+- Runs tests using `mvn clean test`
+- Uses Java 23 on Ubuntu latest runner
+- Uploads **Allure Report results** as build artifacts
+- Validates build status before allowing merge (if branch protection is enabled)
+
+###  Workflow Summary:
+```yaml
+name: Run API Tests with Allure Report
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '23'
+      - run: mvn clean test
+      - uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: testOut/allure-results
+```
+
+## Author
+Mahmoud Hamdy
+ISTQB Certified Tester Engineer – CTFL
 
