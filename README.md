@@ -139,6 +139,6 @@ jobs:
 ---
 
 ## Author
-Mahmoud Hamdy
-ISTQB Certified Tester Engineer – CTFL
+Mahmoud Hamdy – ISTQB® CTFL Certified Tester
+
 
