@@ -126,7 +126,7 @@ jobs:
           java-version: '23'
 
       - name: Run Swag_Labs Tests
-        run: mvn clean test
+        run:  mvn clean test -Dheadless=true
 
       - name: Archive Allure Results
         if: always()

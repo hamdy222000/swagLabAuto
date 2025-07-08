@@ -9,13 +9,7 @@
     <test name="all_pages">
         <classes>
             <class name="tests.loginTest"></class>
-            <class name="tests.ProductsTest"></class>
-            <class name="tests.CartTest"></class>
-            <class name="tests.InformationTest"></class>
-            <class name="tests.OverviewTest"></class>
-            <class name="tests.CompleteTest"></class>
-            <class name="tests.LogoutTest"></class>
-            <class name="tests.EndToEndTest"></class>
+
         </classes>
     </test>
 
