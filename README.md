@@ -61,6 +61,8 @@ mvn clean test "-Dsurefire.suiteXmlFiles=regression.xml"
 ```bash
  allure serve testOut/allure-results
 ```
+   Make sure Allure CLI is installed. [Installation guide](https://docs.qameta.io/allure/)
+
    
 ---
 
@@ -90,9 +92,9 @@ mvn clean test "-Dsurefire.suiteXmlFiles=regression.xml"
 
 ---
 
-##  Continuous Integration (CI/CD)
+## CI/CD with GitHub Actions
 
-This project uses **GitHub Actions** to run REST API tests automatically on every `push` or `pull request` to the `main` branch.
+This project uses **GitHub Actions** to run UI tests automatically on every `push` or `pull request` to the `main` branch.
 
 ###  Workflow Features:
 - Runs tests using `mvn clean test -Dheadless=true`
@@ -139,6 +141,6 @@ jobs:
 ---
 
 ## Author
-Mahmoud Hamdy – ISTQB® CTFL Certified Tester
-
+**Mahmoud Hamdy**  
+ISTQB® Certified Tester – CTFL
 
