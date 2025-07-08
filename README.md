@@ -111,7 +111,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  api-tests:
+  ui-tests:
     name: Run Swag_Labs Tests
     runs-on: ubuntu-latest
 
@@ -134,7 +134,6 @@ jobs:
         with:
           name: allure-results
           path: testOut/allure-results
-
 ```
 
 ## Author
